@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "nuxswfCOuGezA+WZWmk8IW0N5LPj1Ijs3HBPi69atSrbaQUIQR5zuPpDoF/VvIJ2xM8pyLX8hP7bNLoW6S8AfA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\APIC#\\CreateData2\\DataCreation2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

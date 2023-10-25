@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cftoltmVDAgkrCi5vOJ9qo1SKE8mt7+INjAEKZ1AmTsUKvu/VdQf2foDfF8lcsb1L3tyuAX2UJIZwMVts8u+rw==",
+  "dgSpecHash": "SsEUbrbmcTiVEaBNYWfZIvSm+YgsDnt9agvwh6C8gx2uIt7lM5C9of0LqjS4INHW6cCCYrT/86fpr4OOPEyOCw==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\APIC#\\APIC#\\APIC#.csproj",
   "expectedPackageFiles": [
@@ -37,7 +37,7 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.testplatform.testhost\\17.7.2\\microsoft.testplatform.testhost.17.7.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\mstest.testadapter\\3.1.1\\mstest.testadapter.3.1.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\mstest.testframework\\3.1.1\\mstest.testframework.3.1.1.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\nuget.frameworks\\6.5.0\\nuget.frameworks.6.5.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.componentmodel.annotations\\4.5.0\\system.componentmodel.annotations.4.5.0.nupkg.sha512",

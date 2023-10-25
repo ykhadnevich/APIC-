@@ -1,0 +1,17 @@
+C:\Users\user\source\repos\APIC#\CreateData2\bin\Debug\net7.0\DataCreation2.exe
+C:\Users\user\source\repos\APIC#\CreateData2\bin\Debug\net7.0\DataCreation2.deps.json
+C:\Users\user\source\repos\APIC#\CreateData2\bin\Debug\net7.0\DataCreation2.runtimeconfig.json
+C:\Users\user\source\repos\APIC#\CreateData2\bin\Debug\net7.0\DataCreation2.dll
+C:\Users\user\source\repos\APIC#\CreateData2\bin\Debug\net7.0\DataCreation2.pdb
+C:\Users\user\source\repos\APIC#\CreateData2\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\user\source\repos\APIC#\CreateData2\obj\Debug\net7.0\DataCreation2.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\APIC#\CreateData2\obj\Debug\net7.0\DataCreation2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\APIC#\CreateData2\obj\Debug\net7.0\DataCreation2.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\APIC#\CreateData2\obj\Debug\net7.0\DataCreation2.AssemblyInfo.cs
+C:\Users\user\source\repos\APIC#\CreateData2\obj\Debug\net7.0\DataCreation2.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\APIC#\CreateData2\obj\Debug\net7.0\DataCreation2.csproj.CopyComplete
+C:\Users\user\source\repos\APIC#\CreateData2\obj\Debug\net7.0\DataCreation2.dll
+C:\Users\user\source\repos\APIC#\CreateData2\obj\Debug\net7.0\refint\DataCreation2.dll
+C:\Users\user\source\repos\APIC#\CreateData2\obj\Debug\net7.0\DataCreation2.pdb
+C:\Users\user\source\repos\APIC#\CreateData2\obj\Debug\net7.0\DataCreation2.genruntimeconfig.cache
+C:\Users\user\source\repos\APIC#\CreateData2\obj\Debug\net7.0\ref\DataCreation2.dll
