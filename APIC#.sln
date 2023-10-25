@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIC#", "APIC#\APIC#.csproj", "{F4E81DD6-8C44-4416-A96A-1C27DD37AE60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{789FF57D-4E24-4C27-8E41-D09EA94E2A3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F4E81DD6-8C44-4416-A96A-1C27DD37AE60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4E81DD6-8C44-4416-A96A-1C27DD37AE60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4E81DD6-8C44-4416-A96A-1C27DD37AE60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789FF57D-4E24-4C27-8E41-D09EA94E2A3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789FF57D-4E24-4C27-8E41-D09EA94E2A3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789FF57D-4E24-4C27-8E41-D09EA94E2A3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789FF57D-4E24-4C27-8E41-D09EA94E2A3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

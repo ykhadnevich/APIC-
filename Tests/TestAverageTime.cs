@@ -1,16 +1,43 @@
-namespace Tests
-{
-    public class Tests
-    {
-        [SetUp]
-        public void Setup()
-        {
-        }
+using NUnit.Framework;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 
-        [Test]
-        public void Test1()
+[TestFixture]
+public class UserAverageStatsE2ETests
+{
+    private HttpClient client;
+
+    [SetUp]
+    public void Setup()
+    {
+        client = new HttpClient();
+        // Ensure that your service is running at http://localhost:8080
+    }
+
+    [Test]
+    public async Task GetUserTotalStats_ReturnsValidResponse()
+    {
+        // Arrange
+        string baseUrl = "http://localhost:8080";
+        string userId = "2fba2529-c166-8574-2da2-eac544d82634";
+        string apiUrl = $"{baseUrl}/api/stats/user/total?userId1={userId}";
+
+        // Act
+        HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+        // Assert
+        Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+
+        if (response.StatusCode == HttpStatusCode.OK)
         {
-            Assert.Pass();
+            string responseContent = await response.Content.ReadAsStringAsync();
         }
+    }
+
+    [TearDown]
+    public void TearDown()
+    {
+        client.Dispose();
     }
 }
