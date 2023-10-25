@@ -1,0 +1,5 @@
+.vs
+APIC#/bin
+APIC#/obj
+Tests/obj
+Tests/bin
