@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+aCQj5OHkow0IjA2Fd8Pj8j3+USOF66+JqYB1LzHf6Troew/P0uKZLZjwURHr1kEPQq+Rx4plp5yXXoE5jIVNg==",
+  "dgSpecHash": "IzBgymOp6CiHqoV4ewIP5gld/edScos1jjj/smeluR1H837jXcEdAiUdPQlGKydOXDI9SB9Px2v20ps7C1mHYw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\source\\repos\\APIC#\\Tests\\Tests.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\APIC#\\Tests\\IntegrationTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.hosting\\2.2.7\\microsoft.aspnetcore.hosting.2.2.7.nupkg.sha512",
@@ -52,7 +52,14 @@
     "C:\\Users\\user\\.nuget\\packages\\system.memory\\4.5.1\\system.memory.4.5.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.1\\system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
-    "C:\\Users\\user\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+    "C:\\Users\\user\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\xunit\\2.5.3\\xunit.2.5.3.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\xunit.analyzers\\1.4.0\\xunit.analyzers.1.4.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\xunit.assert\\2.5.3\\xunit.assert.2.5.3.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\xunit.core\\2.5.3\\xunit.core.2.5.3.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\xunit.extensibility.core\\2.5.3\\xunit.extensibility.core.2.5.3.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\xunit.extensibility.execution\\2.5.3\\xunit.extensibility.execution.2.5.3.nupkg.sha512"
   ],
   "logs": []
 }

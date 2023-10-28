@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Net;
 using System.Text;
 
+
 string baseUrl = "http://localhost:8080/";
 HttpListener listener = new HttpListener();
 listener.Prefixes.Add(baseUrl);
@@ -19,8 +20,9 @@ while (true)
 
     if (request.HttpMethod == "GET")
     {
-        string deletedUserIdsFilePath = "C:\\Users\\user\\source\\repos\\Feature4\\Feature4\\DeletedUserIds.json";
-        string jsonFilePath = "C:\\Users\\user\\source\\repos\\Feature4\\Feature4\\Data3.json";
+
+        string deletedUserIdsFilePath = "DeletedUserIds.json";
+        string jsonFilePath = "Data3.json";
         string dateParam = request.QueryString.Get("date");
         string userId = request.QueryString.Get("userId");
         string userId1 = request.QueryString.Get("userId1");
@@ -33,7 +35,7 @@ while (true)
         {
 
 
-            int usersOnline = GetUserCountForDate("C:\\Users\\user\\source\\repos\\TDD\\TDD\\Data.txt", dateParam);
+            int usersOnline = GetUserCountForDate("Data.txt", dateParam);
 
             if (usersOnline >= 0)
             {
@@ -57,7 +59,7 @@ while (true)
 
         else if (!string.IsNullOrEmpty(dateParam) && !string.IsNullOrEmpty(userId))
         {
-            var userStats = GetUserStatsForDateAndUserId("C:\\Users\\user\\source\\repos\\TDD\\TDD2\\Data2.txt", dateParam, userId);
+            var userStats = GetUserStatsForDateAndUserId("Data2.txt", dateParam, userId);
 
             if (userStats != null)
             {
@@ -82,7 +84,7 @@ while (true)
 
         else if (!string.IsNullOrEmpty(dateParam2) && string.IsNullOrEmpty(userId))
         {
-            var randomUserCount = GenerateRandomUserCount("C:\\Users\\user\\source\\repos\\TDD\\TDD\\Data.txt");
+            var randomUserCount = GenerateRandomUserCount("Data.txt");
             DateTime requestedDate;
             if (DateTime.TryParseExact(dateParam2, "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out requestedDate) && requestedDate > DateTime.Now)
             {
@@ -133,7 +135,7 @@ while (true)
             DateTime specifiedDate = DateTime.Parse(dateParam2);
             double tolerance = double.Parse(toleranceParam, CultureInfo.InvariantCulture);
 
-            bool willBeOnline = CalculateOnlineChance("C:\\Users\\user\\source\\repos\\TDD\\TDD2\\Data2.txt", specifiedDate, tolerance, userId, out double onlineChance);
+            bool willBeOnline = CalculateOnlineChance("Data2.txt", specifiedDate, tolerance, userId, out double onlineChance);
 
             string jsonResponse = $"{{\"willBeOnline\": {willBeOnline.ToString().ToLower()}, \"onlineChance\": {onlineChance}}}";
 
@@ -224,52 +226,6 @@ while (true)
         }
 
         response.Close();
-    }
-
-    bool CalculateOnlineChance(string dataFilePath, DateTime specifiedDate, double tolerance, string userId, out double onlineChance)
-    {
-        int matchingRecords = 0;
-        int totalRecords = 0;
-
-        try
-        {
-            using (StreamReader reader = new StreamReader(dataFilePath))
-            {
-                string line;
-
-                while ((line = reader.ReadLine()) != null)
-                {
-                    var userData = ParseUserData(line);
-
-                    if (userData != null && userData.ID == userId)
-                    {
-                        totalRecords++;
-
-                        DateTime dataDate = DateTime.ParseExact(userData.Time, "dd.MM.yyyy HH:mm:ss", null);
-                        TimeSpan timeDifference = specifiedDate - dataDate;
-
-                        if (userData.WasUserOnline == "online")
-                        {
-                            matchingRecords++;
-                        }
-                    }
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Error: " + ex.Message);
-        }
-
-        if (totalRecords == 0)
-        {
-            onlineChance = 0;
-            return false;
-        }
-
-        onlineChance = (double)matchingRecords / totalRecords;
-
-        return onlineChance >= tolerance;
     }
     static long CalculateTotalTime(JArray onlineRelic)
     {
@@ -389,36 +345,83 @@ while (true)
         }
 
         return -1;
-    }
+    }  
+}
 
-    UserData ParseUserData(string line)
+bool CalculateOnlineChance(string dataFilePath, DateTime specifiedDate, double tolerance, string userId, out double onlineChance)
+{
+    int matchingRecords = 0;
+    int totalRecords = 0;
+
+    try
     {
-        var userData = new UserData();
-        var parts = line.Split(';');
-
-        foreach (var part in parts)
+        using (StreamReader reader = new StreamReader(dataFilePath))
         {
-            if (part.StartsWith("ID:"))
+            string line;
+
+            while ((line = reader.ReadLine()) != null)
             {
-                userData.ID = part.Substring(3);
-            }
-            else if (part.StartsWith("Time:"))
-            {
-                userData.Time = part.Substring(5);
-            }
-            else if (part.StartsWith("nearestOnlineTime:"))
-            {
-                userData.NearestOnlineTime = part.Substring(18);
-            }
-            else if (part.StartsWith("wasUserOnline:"))
-            {
-                userData.WasUserOnline = part.Substring(14);
+                var userData = ParseUserData(line);
+
+                if (userData != null && userData.ID == userId)
+                {
+                    totalRecords++;
+
+                    DateTime dataDate = DateTime.ParseExact(userData.Time, "dd.MM.yyyy HH:mm:ss", null);
+                    TimeSpan timeDifference = specifiedDate - dataDate;
+
+                    if (userData.WasUserOnline == "online")
+                    {
+                        matchingRecords++;
+                    }
+                }
             }
         }
-
-        return userData;
     }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Error: " + ex.Message);
+    }
+
+    if (totalRecords == 0)
+    {
+        onlineChance = 0;
+        return false;
+    }
+
+    onlineChance = (double)matchingRecords / totalRecords;
+
+    return onlineChance >= tolerance;
 }
+
+UserData ParseUserData(string line)
+{
+    var userData = new UserData();
+    var parts = line.Split(';');
+
+    foreach (var part in parts)
+    {
+        if (part.StartsWith("ID:"))
+        {
+            userData.ID = part.Substring(3);
+        }
+        else if (part.StartsWith("Time:"))
+        {
+            userData.Time = part.Substring(5);
+        }
+        else if (part.StartsWith("nearestOnlineTime:"))
+        {
+            userData.NearestOnlineTime = part.Substring(18);
+        }
+        else if (part.StartsWith("wasUserOnline:"))
+        {
+            userData.WasUserOnline = part.Substring(14);
+        }
+    }
+
+    return userData;
+}
+
 public class UserData
 {
     public string? ID { get; set; }
