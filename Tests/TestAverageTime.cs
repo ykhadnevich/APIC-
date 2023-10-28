@@ -19,7 +19,7 @@ public class UserAverageStatsE2ETests
     public async Task GetUserTotalStats_ReturnsValidResponse()
     {
         // Arrange
-        string baseUrl = "http://localhost:8080";
+        string baseUrl = "http://localhost:8080/";
         string userId = "2fba2529-c166-8574-2da2-eac544d82634";
         string apiUrl = $"{baseUrl}/api/stats/user/total?userId1={userId}";
 

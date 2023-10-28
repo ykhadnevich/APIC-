@@ -13,8 +13,8 @@ class Program
     static async Task Main(string[] args)
     {
         string base_url = "https://sef.podkolzin.consulting/api/users/lastSeen";
-        string outputFilePath = "C:\\Users\\user\\source\\repos\\APIC#\\DataCreation\\Data3.json";
-        string deletedUserIdsFilePath = "C:\\Users\\user\\source\\repos\\APIC#\\DataCreation\\DeletedUserIds.json";
+        string outputFilePath = "Data3.json";
+        string deletedUserIdsFilePath = "DeletedUserIds.json";
         int offset = 0;
 
         List<string> deletedUserIds = new List<string>();

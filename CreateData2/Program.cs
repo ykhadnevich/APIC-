@@ -104,7 +104,7 @@ public class Request
         string lastSeenStatus = GetLastSeenStatus(user);
         Console.WriteLine($"ID: {user.userId}; Time: {DateTime.UtcNow}; nearestOnlineTime: {user.lastSeenDate}; wasUserOnline: {lastSeenStatus} ");
 
-        string outputPath = "C:\\Users\\user\\source\\repos\\APIC#\\CreateData2\\Data2.txt";
+        string outputPath = "Data2.txt";
         string outputText = $"ID:{user.userId};Time:{DateTime.UtcNow};nearestOnlineTime:{user.lastSeenDate};wasUserOnline:{lastSeenStatus}";
 
         File.AppendAllText(outputPath, outputText + Environment.NewLine);
