@@ -33,8 +33,6 @@ while (true)
 
         if (!string.IsNullOrEmpty(dateParam) && string.IsNullOrEmpty(userId))
         {
-
-
             int usersOnline = GetUserCountForDate("Data.txt", dateParam);
 
             if (usersOnline >= 0)
@@ -54,8 +52,6 @@ while (true)
             }
 
         }
-
-
 
         else if (!string.IsNullOrEmpty(dateParam) && !string.IsNullOrEmpty(userId))
         {
