@@ -1,0 +1,25 @@
+name: API
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test-e2e:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      
+    - name: Publish
+      run: dotnet publish -o out
+    - name: Run
+      run: |
+        dotnet out/APIS.dll & while ! nc -z localhost 8080; do sleep 1; done &
+        echo "API is up" &
+        echo "===========================" & dotnet test TestsIntegration
