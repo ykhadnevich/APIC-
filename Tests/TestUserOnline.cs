@@ -10,7 +10,7 @@ using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 public class IntegrationTests
 {
     private HttpClient httpClient;
-    private const string baseUrl = "http://localhost:8080";
+    private const string baseUrl = "http://localhost:8080/";
 
     [TestInitialize]
     public void TestInitialize()
