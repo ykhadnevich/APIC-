@@ -1,13 +1,4 @@
 .vs/
-APIC#/bin/
-APIC#/obj/
-CreateData2/bin/
-CreateData2/obj/
-DataCreation/bin/
-DataCreation/obj/
-DataCreation1/bin/
-DataCreation1/obj/
-Tests/bin/
-Tests/obj/
+bin/
+obj/
 out/
-.out/
