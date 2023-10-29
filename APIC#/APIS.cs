@@ -82,7 +82,7 @@ while (true)
         {
             var randomUserCount = GenerateRandomUserCount("Data.txt");
             DateTime requestedDate;
-            if (DateTime.TryParseExact(dateParam2, "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out requestedDate) && requestedDate > DateTime.Now)
+            if (DateTime.TryParseExact(dateParam2, "dd.MM.yyyy H:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out requestedDate) && requestedDate > DateTime.Now)
             {
                 string jsonData = $"{{\"date\": \"{dateParam2}\", \"usersOnline\": {randomUserCount}}}";
 
@@ -128,7 +128,7 @@ while (true)
 
         else if (!string.IsNullOrEmpty(dateParam2) && !string.IsNullOrEmpty(toleranceParam) && !string.IsNullOrEmpty(userId))
         {
-            DateTime specifiedDate = DateTime.Parse(dateParam2);
+            DateTime specifiedDate = DateTime.ParseExact(dateParam2, "dd.MM.yyyy H:mm:ss", CultureInfo.InvariantCulture);
             double tolerance = double.Parse(toleranceParam, CultureInfo.InvariantCulture);
 
             bool willBeOnline = CalculateOnlineChance("Data2.txt", specifiedDate, tolerance, userId, out double onlineChance);
@@ -229,8 +229,8 @@ while (true)
 
         for (int i = 0; i < onlineRelic.Count - 1; i += 2)
         {
-            var startDate = DateTime.Parse(onlineRelic[i]["startDate"].ToString());
-            var endDate = DateTime.Parse(onlineRelic[i + 1]["endDate"].ToString());
+            var startDate = DateTime.ParseExact(onlineRelic[i]["startDate"].ToString(), "dd.MM.yyyy H:mm:ss", CultureInfo.InvariantCulture);
+            var endDate = DateTime.ParseExact(onlineRelic[i + 1]["endDate"].ToString(), "dd.MM.yyyy H:mm:ss", CultureInfo.InvariantCulture);
 
             if (endDate != DateTime.MinValue)
             {
@@ -316,7 +316,7 @@ while (true)
                     if (parts.Length == 2)
                     {
                         string dataDate = parts[0].Trim();
-                        if (DateTime.TryParseExact(dataDate, "dd.MM.yyyy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedDate))
+                        if (DateTime.TryParseExact(dataDate, "dd.MM.yyyy H:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedDate))
                         {
                             int usersOnline;
                             if (int.TryParse(parts[1].Split(':')[1].Trim(), out usersOnline))
@@ -363,7 +363,7 @@ bool CalculateOnlineChance(string dataFilePath, DateTime specifiedDate, double t
                 {
                     totalRecords++;
 
-                    DateTime dataDate = DateTime.ParseExact(userData.Time, "dd.MM.yyyy HH:mm:ss", null);
+                    DateTime dataDate = DateTime.ParseExact(userData.Time, "dd.MM.yyyy H:mm:ss", CultureInfo.InvariantCulture);
                     TimeSpan timeDifference = specifiedDate - dataDate;
 
                     if (userData.WasUserOnline == "online")
