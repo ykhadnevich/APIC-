@@ -20,6 +20,6 @@ jobs:
       run: dotnet publish -o out
     - name: Run
       run: |
-        dotnet .\out\APICSharp.dll & while ! nc -z localhost 8080; do sleep 1; done &
+        dotnet ./out/APICSharp.dll & while ! nc -z localhost 8080; do sleep 1; done &
         echo "API is up" &
         echo "===========================" & dotnet test Tests
